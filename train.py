@@ -89,7 +89,7 @@ def build_model(checkpoints, print_log):
         yaml.dump(dict(config),f)
     # model
     print('building model...\n')
-    model = getattr(models, opt.model)(config)
+    model = getattr(models, config.model)(config)
     if checkpoints is not None:
         model.load_state_dict(checkpoints['model'])
     if opt.pretrain:

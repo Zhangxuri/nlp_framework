@@ -13,12 +13,12 @@ enc_num_layers: 1
 epoch: 40
 eval_interval: 674
 gpus:
-- 2
+- 0
 hidden_size: 512
 learning_rate: 0.0003
 learning_rate_decay: 0.5
 length_norm: true
-log: test
+log: base_seq2seq_attention
 logF: experiments/dd/
 max_grad_norm: 10
 max_split: 0

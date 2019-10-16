@@ -1,0 +1,113 @@
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (sw1): Sequential(
+      (0): Conv1d(512, 512, kernel_size=(1,), stride=(1,))
+      (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (sw3): Sequential(
+      (0): Conv1d(512, 512, kernel_size=(1,), stride=(1,))
+      (1): ReLU()
+      (2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+      (4): ReLU()
+      (5): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (sw33): Sequential(
+      (0): Conv1d(512, 512, kernel_size=(1,), stride=(1,))
+      (1): ReLU()
+      (2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (3): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+      (4): ReLU()
+      (5): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+      (7): ReLU()
+      (8): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (linear): Sequential(
+      (0): Linear(in_features=1024, out_features=1024, bias=True)
+      (1): GLU(dim=-1)
+      (2): Dropout(p=0.0, inplace=False)
+    )
+    (filter_linear): Linear(in_features=1536, out_features=512, bias=True)
+    (tanh): Tanh()
+    (sigmoid): Sigmoid()
+    (attention): luong_gate_attention(
+      (linear_enc): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): SELU()
+        (2): Dropout(p=0.1, inplace=False)
+        (3): Linear(in_features=512, out_features=512, bias=True)
+        (4): SELU()
+        (5): Dropout(p=0.1, inplace=False)
+      )
+      (linear_in): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): SELU()
+        (2): Dropout(p=0.1, inplace=False)
+        (3): Linear(in_features=512, out_features=512, bias=True)
+        (4): SELU()
+        (5): Dropout(p=0.1, inplace=False)
+      )
+      (linear_out): Sequential(
+        (0): Linear(in_features=1024, out_features=512, bias=True)
+        (1): SELU()
+        (2): Dropout(p=0.1, inplace=False)
+        (3): Linear(in_features=512, out_features=512, bias=True)
+        (4): SELU()
+        (5): Dropout(p=0.1, inplace=False)
+      )
+      (softmax): Softmax(dim=-1)
+    )
+    (rnn): LSTM(512, 512, num_layers=3, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedLSTM(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): LSTMCell(512, 512)
+        (1): LSTMCell(512, 512)
+        (2): LSTMCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_gate_attention(
+      (linear_enc): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): SELU()
+        (2): Dropout(p=0.0, inplace=False)
+        (3): Linear(in_features=512, out_features=512, bias=True)
+        (4): SELU()
+        (5): Dropout(p=0.0, inplace=False)
+      )
+      (linear_in): Sequential(
+        (0): Linear(in_features=512, out_features=512, bias=True)
+        (1): SELU()
+        (2): Dropout(p=0.0, inplace=False)
+        (3): Linear(in_features=512, out_features=512, bias=True)
+        (4): SELU()
+        (5): Dropout(p=0.0, inplace=False)
+      )
+      (linear_out): Sequential(
+        (0): Linear(in_features=1024, out_features=512, bias=True)
+        (1): SELU()
+        (2): Dropout(p=0.0, inplace=False)
+        (3): Linear(in_features=512, out_features=512, bias=True)
+        (4): SELU()
+        (5): Dropout(p=0.0, inplace=False)
+      )
+      (softmax): Softmax(dim=-1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 50815890
+

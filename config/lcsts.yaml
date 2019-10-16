@@ -1,5 +1,6 @@
-data: '/home/linjunyang/data/lcsts/data/'
-logF: 'experiments/lcsts/'
+data: data/trg_data/dd/
+logF: experiments/dd/
+model: seq2seq
 epoch: 20
 batch_size: 64
 optim: 'adam'
@@ -16,9 +17,9 @@ enc_num_layers: 3
 bidirectional: True
 dropout: 0.0
 max_time_step: 50
-eval_interval: 10000
-save_interval: 3000
-metrics: ['rouge']
+eval_interval: 674
+save_interval: 674
+metrics: ['bleu']
 shared_vocab: True
 beam_size: 10
 unk: True
