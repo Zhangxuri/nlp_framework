@@ -1,0 +1,343 @@
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+epoch:   1, loss: 3269.000, time: 97.047, updates:      674, accuracy: 24.91
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+epoch:   1, loss: 3269.000, time: 94.750, updates:      674, accuracy: 24.91
+BLEU = 0.71, 21.0/2.2/0.6/0.1 (BP=0.568, ratio=0.639, hyp_len=26314, ref_len=41185)
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+epoch:   1, loss: 3269.000, time: 100.869, updates:      674, accuracy: 24.91
+BLEU = 0.71, 21.0/2.2/0.6/0.1 (BP=0.568, ratio=0.639, hyp_len=26314, ref_len=41185)
+epoch:   2, loss: 2733.850, time: 97.710, updates:     1348, accuracy: 30.81
+BLEU = 1.00, 22.1/2.7/0.7/0.2 (BP=0.630, ratio=0.684, hyp_len=28173, ref_len=41185)
+epoch:   3, loss: 2509.433, time: 97.474, updates:     2022, accuracy: 33.37
+BLEU = 1.11, 24.6/3.3/1.0/0.3 (BP=0.503, ratio=0.593, hyp_len=24420, ref_len=41185)
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+epoch:   1, loss: 3269.000, time: 92.711, updates:      674, accuracy: 24.91
+BLEU = 0.71, 21.0/2.2/0.6/0.1 (BP=0.568, ratio=0.639, hyp_len=26314, ref_len=41185)
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+
+epoch:   1, loss: 3269.000, time: 94.156, updates:      674, accuracy: 24.91
+BLEU = 0.71, 21.0/2.2/0.6/0.1 (BP=0.568, ratio=0.639, hyp_len=26314, ref_len=41185)
+
+seq2seq(
+  (encoder): rnn_encoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): GRU(512, 512, bidirectional=True)
+  )
+  (decoder): rnn_decoder(
+    (embedding): Embedding(18322, 512)
+    (rnn): StackedGRU(
+      (dropout): Dropout(p=0.0, inplace=False)
+      (layers): ModuleList(
+        (0): GRUCell(512, 512)
+      )
+    )
+    (linear): Linear(in_features=512, out_features=18322, bias=True)
+    (linear_): Linear(in_features=512, out_features=512, bias=True)
+    (sigmoid): Sigmoid()
+    (attention): luong_attention(
+      (linear_in): Linear(in_features=512, out_features=512, bias=True)
+      (linear_out): Sequential(
+        (0): Linear(in_features=1536, out_features=512, bias=True)
+        (1): Tanh()
+      )
+      (softmax): Softmax(dim=1)
+    )
+    (dropout): Dropout(p=0.0, inplace=False)
+  )
+  (log_softmax): LogSoftmax()
+  (criterion): CrossEntropyLoss()
+)
+
+total number of parameters: 24820114
+

@@ -1,0 +1,8 @@
+*.pyc
+*.pkl
+*.dict
+*.id
+*.str
+*.pt
+__pycache__/
+.vscode/
