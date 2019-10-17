@@ -111,3 +111,42 @@ seq2seq(
 
 total number of parameters: 50815890
 
+epoch:   1, loss: 3444.322, time: 194.988, updates:      674, accuracy: 21.07
+BLEU = 0.25, 35.6/4.4/1.3/0.1 (BP=0.113, ratio=0.314, hyp_len=12943, ref_len=41185)
+epoch:   2, loss: 2872.417, time: 167.630, updates:     1348, accuracy: 28.98
+BLEU = 0.82, 27.9/3.8/1.5/0.6 (BP=0.264, ratio=0.429, hyp_len=17658, ref_len=41185)
+epoch:   3, loss: 2653.190, time: 176.129, updates:     2022, accuracy: 31.73
+BLEU = 0.87, 29.0/4.0/1.6/0.8 (BP=0.252, ratio=0.420, hyp_len=17304, ref_len=41185)
+epoch:   4, loss: 2459.813, time: 176.639, updates:     2696, accuracy: 34.20
+BLEU = 1.13, 29.8/4.7/1.9/1.0 (BP=0.278, ratio=0.439, hyp_len=18066, ref_len=41185)
+epoch:   5, loss: 2264.823, time: 177.636, updates:     3370, accuracy: 37.09
+BLEU = 1.42, 28.7/5.1/2.1/0.9 (BP=0.346, ratio=0.485, hyp_len=19972, ref_len=41185)
+epoch:   6, loss: 2049.314, time: 169.719, updates:     4044, accuracy: 40.93
+BLEU = 2.02, 27.6/5.5/2.3/1.1 (BP=0.459, ratio=0.562, hyp_len=23146, ref_len=41185)
+epoch:   7, loss: 1708.648, time: 175.768, updates:     4718, accuracy: 48.06
+BLEU = 3.08, 28.1/6.6/3.3/1.9 (BP=0.528, ratio=0.610, hyp_len=25125, ref_len=41185)
+epoch:   8, loss: 1443.717, time: 239.692, updates:     5392, accuracy: 54.86
+BLEU = 3.77, 30.1/8.2/4.7/3.1 (BP=0.488, ratio=0.583, hyp_len=23991, ref_len=41185)
+epoch:   9, loss: 1286.022, time: 241.623, updates:     6066, accuracy: 59.24
+BLEU = 4.59, 29.8/8.6/5.1/3.5 (BP=0.559, ratio=0.633, hyp_len=26052, ref_len=41185)
+epoch:  10, loss: 1200.783, time: 236.107, updates:     6740, accuracy: 61.78
+BLEU = 4.66, 29.8/8.7/5.2/3.5 (BP=0.561, ratio=0.634, hyp_len=26108, ref_len=41185)
+epoch:  11, loss: 1157.410, time: 174.423, updates:     7414, accuracy: 63.12
+BLEU = 4.87, 29.7/8.8/5.3/3.6 (BP=0.579, ratio=0.646, hyp_len=26626, ref_len=41185)
+epoch:  12, loss: 1133.551, time: 168.851, updates:     8088, accuracy: 63.81
+BLEU = 4.87, 29.8/8.8/5.3/3.6 (BP=0.578, ratio=0.646, hyp_len=26606, ref_len=41185)
+epoch:  13, loss: 1121.568, time: 170.018, updates:     8762, accuracy: 64.17
+BLEU = 4.88, 29.7/8.8/5.4/3.7 (BP=0.575, ratio=0.643, hyp_len=26501, ref_len=41185)
+epoch:  14, loss: 1117.422, time: 159.036, updates:     9436, accuracy: 64.31
+BLEU = 4.96, 29.8/8.8/5.4/3.7 (BP=0.582, ratio=0.649, hyp_len=26717, ref_len=41185)
+epoch:  15, loss: 1113.246, time: 163.348, updates:    10110, accuracy: 64.42
+BLEU = 4.93, 29.8/8.8/5.4/3.7 (BP=0.581, ratio=0.648, hyp_len=26677, ref_len=41185)
+epoch:  16, loss: 1112.684, time: 170.745, updates:    10784, accuracy: 64.44
+BLEU = 4.94, 29.9/8.9/5.4/3.8 (BP=0.576, ratio=0.645, hyp_len=26545, ref_len=41185)
+epoch:  17, loss: 1112.063, time: 165.354, updates:    11458, accuracy: 64.47
+BLEU = 4.95, 29.9/8.9/5.4/3.7 (BP=0.580, ratio=0.647, hyp_len=26664, ref_len=41185)
+epoch:  18, loss: 1112.044, time: 165.610, updates:    12132, accuracy: 64.50
+BLEU = 4.93, 29.9/8.8/5.4/3.7 (BP=0.579, ratio=0.646, hyp_len=26626, ref_len=41185)
+epoch:  19, loss: 1109.754, time: 169.087, updates:    12806, accuracy: 64.50
+BLEU = 4.95, 29.9/8.9/5.4/3.7 (BP=0.578, ratio=0.646, hyp_len=26602, ref_len=41185)
+epoch:  20, loss: 1110.555, time: 169.285, updates:    13480, accuracy: 64.49

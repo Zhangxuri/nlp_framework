@@ -35,3 +35,55 @@ epoch:   1, loss: 3269.000, time: 94.621, updates:      674, accuracy: 24.91
 BLEU = 0.71, 21.0/2.2/0.6/0.1 (BP=0.568, ratio=0.639, hyp_len=26314, ref_len=41185)
 epoch:   2, loss: 2733.850, time: 93.543, updates:     1348, accuracy: 30.81
 BLEU = 1.00, 22.1/2.7/0.7/0.2 (BP=0.630, ratio=0.684, hyp_len=28173, ref_len=41185)
+epoch:   3, loss: 2509.433, time: 95.710, updates:     2022, accuracy: 33.37
+BLEU = 1.11, 24.6/3.3/1.0/0.3 (BP=0.503, ratio=0.593, hyp_len=24420, ref_len=41185)
+epoch:   4, loss: 2320.693, time: 98.146, updates:     2696, accuracy: 35.84
+BLEU = 1.52, 25.1/3.8/1.2/0.4 (BP=0.564, ratio=0.636, hyp_len=26181, ref_len=41185)
+epoch:   5, loss: 2138.388, time: 97.191, updates:     3370, accuracy: 38.78
+BLEU = 1.53, 26.1/4.1/1.2/0.4 (BP=0.559, ratio=0.632, hyp_len=26037, ref_len=41185)
+epoch:   6, loss: 1960.296, time: 95.972, updates:     4044, accuracy: 42.29
+BLEU = 1.92, 24.8/4.1/1.3/0.5 (BP=0.680, ratio=0.722, hyp_len=29721, ref_len=41185)
+epoch:   7, loss: 1785.508, time: 101.381, updates:     4718, accuracy: 46.21
+BLEU = 2.43, 25.0/4.5/1.7/0.7 (BP=0.716, ratio=0.750, hyp_len=30878, ref_len=41185)
+epoch:   8, loss: 1616.312, time: 98.291, updates:     5392, accuracy: 50.43
+BLEU = 2.76, 25.6/5.1/2.0/0.9 (BP=0.714, ratio=0.748, hyp_len=30805, ref_len=41185)
+epoch:   9, loss: 1455.395, time: 96.642, updates:     6066, accuracy: 54.75
+BLEU = 3.26, 26.4/5.8/2.5/1.2 (BP=0.707, ratio=0.743, hyp_len=30587, ref_len=41185)
+epoch:  10, loss: 1305.260, time: 98.573, updates:     6740, accuracy: 59.02
+BLEU = 4.39, 26.1/6.3/3.1/1.9 (BP=0.791, ratio=0.810, hyp_len=33356, ref_len=41185)
+epoch:  11, loss: 1111.311, time: 94.577, updates:     7414, accuracy: 65.34
+BLEU = 4.93, 27.6/7.4/4.0/2.4 (BP=0.737, ratio=0.766, hyp_len=31552, ref_len=41185)
+epoch:  12, loss: 1003.508, time: 93.205, updates:     8088, accuracy: 69.06
+BLEU = 5.61, 27.2/7.7/4.3/2.8 (BP=0.794, ratio=0.813, hyp_len=33480, ref_len=41185)
+epoch:  13, loss: 948.025, time: 99.552, updates:     8762, accuracy: 71.02
+BLEU = 5.61, 27.1/7.6/4.3/2.8 (BP=0.799, ratio=0.817, hyp_len=33646, ref_len=41185)
+epoch:  14, loss: 919.636, time: 98.221, updates:     9436, accuracy: 72.02
+BLEU = 5.83, 27.1/7.8/4.5/3.0 (BP=0.803, ratio=0.820, hyp_len=33761, ref_len=41185)
+epoch:  15, loss: 904.994, time: 97.509, updates:    10110, accuracy: 72.53
+BLEU = 5.81, 27.3/7.8/4.5/2.9 (BP=0.798, ratio=0.816, hyp_len=33608, ref_len=41185)
+epoch:  16, loss: 898.189, time: 96.155, updates:    10784, accuracy: 72.77
+BLEU = 5.85, 27.1/7.7/4.4/2.9 (BP=0.813, ratio=0.829, hyp_len=34130, ref_len=41185)
+epoch:  17, loss: 893.830, time: 97.330, updates:    11458, accuracy: 72.93
+BLEU = 5.90, 27.2/7.7/4.5/3.0 (BP=0.812, ratio=0.828, hyp_len=34085, ref_len=41185)
+epoch:  18, loss: 891.668, time: 97.607, updates:    12132, accuracy: 73.02
+BLEU = 5.92, 27.1/7.7/4.5/3.0 (BP=0.813, ratio=0.829, hyp_len=34137, ref_len=41185)
+epoch:  19, loss: 890.939, time: 100.960, updates:    12806, accuracy: 73.02
+BLEU = 5.94, 27.1/7.8/4.5/3.0 (BP=0.813, ratio=0.829, hyp_len=34136, ref_len=41185)
+epoch:  20, loss: 889.046, time: 100.591, updates:    13480, accuracy: 73.09
+BLEU = 5.94, 27.1/7.7/4.5/3.0 (BP=0.814, ratio=0.830, hyp_len=34171, ref_len=41185)
+epoch:  21, loss: 891.076, time: 98.186, updates:    14154, accuracy: 73.04
+BLEU = 5.93, 27.1/7.7/4.5/3.0 (BP=0.815, ratio=0.830, hyp_len=34186, ref_len=41185)
+epoch:  22, loss: 890.215, time: 93.554, updates:    14828, accuracy: 73.06
+BLEU = 5.92, 27.1/7.7/4.5/3.0 (BP=0.814, ratio=0.829, hyp_len=34160, ref_len=41185)
+epoch:  23, loss: 889.096, time: 98.061, updates:    15502, accuracy: 73.10
+BLEU = 5.92, 27.1/7.7/4.5/3.0 (BP=0.814, ratio=0.830, hyp_len=34170, ref_len=41185)
+epoch:  24, loss: 889.842, time: 101.354, updates:    16176, accuracy: 73.08
+BLEU = 5.92, 27.1/7.7/4.5/3.0 (BP=0.814, ratio=0.829, hyp_len=34159, ref_len=41185)
+epoch:  25, loss: 889.253, time: 97.999, updates:    16850, accuracy: 73.08
+BLEU = 5.92, 27.1/7.7/4.5/3.0 (BP=0.814, ratio=0.830, hyp_len=34166, ref_len=41185)
+epoch:  26, loss: 890.550, time: 98.213, updates:    17524, accuracy: 73.04
+BLEU = 5.92, 27.1/7.7/4.5/3.0 (BP=0.814, ratio=0.830, hyp_len=34166, ref_len=41185)
+epoch:  27, loss: 889.568, time: 96.543, updates:    18198, accuracy: 73.08
+BLEU = 5.92, 27.1/7.7/4.5/3.0 (BP=0.814, ratio=0.830, hyp_len=34166, ref_len=41185)
+epoch:  28, loss: 889.251, time: 100.096, updates:    18872, accuracy: 73.08
+BLEU = 5.92, 27.1/7.7/4.5/3.0 (BP=0.814, ratio=0.830, hyp_len=34166, ref_len=41185)
