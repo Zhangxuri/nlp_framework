@@ -4,6 +4,8 @@ import torch.nn as nn
 import numpy as np
 import utils.dict_helper as Constants
 from .layers import  EncoderLayer, DecoderLayer
+from models.beam import Beam
+import torch.nn.functional as F
 
 __author__ = "Yu-Hsiang Huang"
 
@@ -110,7 +112,6 @@ class Decoder(nn.Module):
 
         super().__init__()
         n_position = len_max_seq + 1
-
         self.tgt_word_emb = nn.Embedding(
             n_tgt_vocab, d_word_vec, padding_idx=Constants.PAD)
 
@@ -131,7 +132,7 @@ class Decoder(nn.Module):
 
         slf_attn_mask_subseq = get_subsequent_mask(tgt_seq)
         slf_attn_mask_keypad = get_attn_key_pad_mask(seq_k=tgt_seq, seq_q=tgt_seq)
-        slf_attn_mask = (slf_attn_mask_keypad + slf_attn_mask_subseq).gt(0)
+        slf_attn_mask = (slf_attn_mask_keypad.type(torch.uint8) + slf_attn_mask_subseq.type(torch.uint8)).gt(0)
 
         dec_enc_attn_mask = get_attn_key_pad_mask(seq_k=src_seq, seq_q=tgt_seq)
 
@@ -158,7 +159,7 @@ class Transformer(nn.Module):
 
     def __init__(
             self,
-            n_src_vocab, n_tgt_vocab, len_max_seq,
+            n_src_vocab=30000, n_tgt_vocab=30000, len_max_seq=60,
             d_word_vec=512, d_model=512, d_inner=2048,
             n_layers=6, n_head=8, d_k=64, d_v=64, dropout=0.1,
             tgt_emb_prj_weight_sharing=True,
@@ -196,14 +197,36 @@ class Transformer(nn.Module):
             # Share the weight matrix between source & target word embeddings
             assert n_src_vocab == n_tgt_vocab, \
             "To share word embedding table, the vocabulary size of src/tgt shall be the same."
-            self.encoder.src_word_emb.weight = self.decoder.tgt_word_emb.weight
 
-    def forward(self, src_seq, src_pos, tgt_seq, tgt_pos):
+        self.criterion = nn.CrossEntropyLoss(ignore_index=Constants.PAD, reduction='none')
+        # if config.use_cuda:
+        #   self.criterion.cuda()
+        self.criterion.cuda()
 
-        tgt_seq, tgt_pos = tgt_seq[:, :-1], tgt_pos[:, :-1]
+    def compute_loss(self, scores, targets):
+        scores = scores.view(-1, scores.size(2))
+        loss = self.criterion(scores, targets.contiguous().view(-1))
+        return loss
 
-        enc_output, *_ = self.encoder(src_seq, src_pos)
-        dec_output, *_ = self.decoder(tgt_seq, tgt_pos, src_seq, enc_output)
+    def len2pos(self, t_len):
+        t_pos = torch.zeros(t_len.shape[0], torch.max(t_len)).long().cuda()
+        for i in range(t_len.shape[0]):
+            for j in range(t_len[i]):
+                t_pos[i][j] = j + 1
+        return t_pos
+
+
+    def forward(self, src, tgt, src_len, tgt_len):
+        tgt_len = tgt_len - 1
+        src_pos = self.len2pos(src_len)
+        tgt_pos = self.len2pos(tgt_len)
+        tgt = tgt[:,1:]
+
+        enc_output, *_ = self.encoder(src, src_pos)
+        dec_output, *_ = self.decoder(tgt, tgt_pos, src, enc_output)
         seq_logit = self.tgt_word_prj(dec_output) * self.x_logit_scale
-
-        return seq_logit.view(-1, seq_logit.size(2))
+        # seq_logit[b*t*v]
+        outputs = seq_logit.transpose(0,1).contiguous()
+        tgt = tgt.t()#seq_logit.view(-1, seq_logit.size(2))
+        loss = self.compute_loss(outputs, tgt)
+        return loss, outputs

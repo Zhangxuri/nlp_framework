@@ -45,7 +45,7 @@ def load_data(mode='train'):
 
     trainset = utils.BiDataset(data['train'], char=config.char)
     validset = utils.BiDataset(data['valid'], char=config.char)
-    testset = utils.BiDataset(data['test'], char=config.char)
+    testset = utils.BiDataset(data['valid'], char=config.char)
 
     src_vocab = data['dict']['src']
     tgt_vocab = data['dict']['tgt']
@@ -89,7 +89,9 @@ def build_model(checkpoints, print_log):
         yaml.dump(dict(config),f)
     # model
     print('building model...\n')
-    model = getattr(models, config.model)(config)
+    #model = getattr(models, config.model)(config)
+    from models.transformer import Transformer
+    model = Transformer()
     if checkpoints is not None:
         model.load_state_dict(checkpoints['model'])
     if opt.pretrain:
@@ -135,6 +137,7 @@ def train_model(model, data, optim, epoch, params):
             src = src.cuda()
             tgt = tgt.cuda()
             src_len = src_len.cuda()
+            tgt_len = tgt_len.cuda()
         lengths, indices = torch.sort(src_len, dim=0, descending=True)
         src = torch.index_select(src, dim=0, index=indices)
         tgt = torch.index_select(tgt, dim=0, index=indices)
@@ -153,6 +156,7 @@ def train_model(model, data, optim, epoch, params):
 #  original_tgt=[['hello','world'],['hello','hello','world']]
 #  src=[[5,4,4],[5,4,0]]
 #  tgt=[[2,4,5,3,0],[2,4,4,5,3]]
+#  outputs=[max_tgt_len_in_this_batch,batch_size,vocabulary_size]
 
         try:
             if config.schesamp:
@@ -162,7 +166,7 @@ def train_model(model, data, optim, epoch, params):
                 else:
                     loss, outputs = model(src, tgt)
             else:
-                loss, outputs = model(src,tgt)
+                loss, outputs = model(src, tgt ,src_len ,tgt_len)
             pred = outputs.max(2)[1]
             targets = targets.t()
             num_correct = pred.eq(targets).masked_select(targets.ne(utils.PAD)).sum().item()
